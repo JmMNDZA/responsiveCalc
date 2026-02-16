@@ -29,8 +29,16 @@ function clearDisplay() {
 }
 
 function calculate() {
+    expression = display.value;
+    historyArray = [];
     try {
-        updateDisplay(eval(display.value).toString());
+        let result = eval(expression).toString();
+        updateDisplay(result);
+        
+        let historyEntry = expression + " = " + result;
+        historyArray.push(historyEntry); 
+        
+        console.log("History:", historyArray);
     } catch (error) {
         updateDisplay('Error');
     }
