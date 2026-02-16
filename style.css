@@ -114,3 +114,23 @@ button:active {
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+#backspace:active {
+    background-color: lightgray;
+}
+
+#history {
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#history:active {
+    background-color: lightgray;
+}

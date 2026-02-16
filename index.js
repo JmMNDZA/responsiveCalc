@@ -34,6 +34,7 @@ function calculate() {
     } catch (error) {
         updateDisplay('Error');
     }
+    toggleHistory();
 }
 
 function handleKeyPress(event) {
@@ -52,3 +53,8 @@ function handleKeyPress(event) {
 }
 
 document.addEventListener('keydown', handleKeyPress);
+
+function toggleHistory() {
+    const history = document.getElementById('history');
+    history.style.display = 'block';
+}
