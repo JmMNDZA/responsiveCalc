@@ -28,9 +28,10 @@ function clearDisplay() {
     updateDisplay('');
 }
 
+historyArray = [];
+
 function calculate() {
     expression = display.value;
-    historyArray = [];
     try {
         let result = eval(expression).toString();
         updateDisplay(result);
@@ -38,11 +39,14 @@ function calculate() {
         let historyEntry = expression + " = " + result;
         historyArray.push(historyEntry); 
         
-        console.log("History:", historyArray);
+        const historyList = document.getElementById('historyList');
+        const listItem = document.createElement('li');
+        listItem.textContent = historyEntry;
+        historyList.appendChild(listItem);
     } catch (error) {
         updateDisplay('Error');
     }
-    toggleHistory();
+    toggleHistoryButton();
 }
 
 function handleKeyPress(event) {
@@ -62,7 +66,20 @@ function handleKeyPress(event) {
 
 document.addEventListener('keydown', handleKeyPress);
 
-function toggleHistory() {
-    const history = document.getElementById('history');
-    history.style.display = 'block';
+function toggleHistoryButton() {
+    const historyButton = document.getElementById('history');
+    //historyButton.style.display = 'block';
+        if (display.value === 'Error') {
+        historyButton.style.display = 'none';
+    } else {
+        historyButton.style.display = 'block';
+    }
+}
+function toggleHistoryPanel() {
+    historyPanel = document.getElementById('historyPanel');
+    if (historyPanel.style.display === 'none') {
+        historyPanel.style.display = 'block';
+    } else {
+        historyPanel.style.display = 'none';
+    }
 }

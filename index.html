@@ -12,7 +12,7 @@
         <div class ="display">
             <input type="text" id="display" disabled>
             <img src ="images/backspace.ico" alt="Backspace" id="backspace" onclick="backspace()" style="display: none;">
-            <img src ="images/history.ico" alt="History" id="history" onclick="toggleHistory()" style="display: none">
+            <img src ="images/history.ico" alt="History" id="history" onclick="toggleHistoryPanel()" style="display: none">
         </div>
         <div class ="numpad">
             <button class="button" onclick="incrementDisplay('1')">1</button>
@@ -35,6 +35,9 @@
             <button class="box" style="grid-area: box-4" onclick="incrementDisplay('/')">/</button>
             <button class="box box-clear" style="grid-area: box-5" onclick="clearDisplay()">Clear</button>    
         </div>
+    </div>
+    <div id="historyPanel" style ="display: none;">
+        <ul id="historyList"></ul>
     </div>
     <script src="index.js"></script>
 </body>
