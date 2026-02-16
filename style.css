@@ -20,16 +20,18 @@ body {
 
 .numpad {
     display: grid;
-    background-color: lightblue;
+    background-color: #A9A9A9;
     grid-template-columns: 150px 150px 150px; 
     margin: 0;
     gap: 10px;
     padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .operators {
     display: grid;
-    background-color: lightblue;
+    background-color: #A9A9A9;
     grid-template-rows: repeat(4, 150px);
     grid-template-columns: 150px 150px;
     grid-template-areas: 
@@ -40,6 +42,8 @@ body {
     margin: 0;
     gap: 10px;
     padding: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .box {
@@ -50,6 +54,10 @@ body {
     font-weight: bold;
     font-size: 200%;
     border: none;
+}
+
+.box-clear {
+    background-color: aquamarine
 }
 
 button {
@@ -63,12 +71,19 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    background-color: lightgray;
+    vertical-align: top;
+    padding: 8px 13px 6px;
+
 }
 
 .display {
     grid-column: 1 / span 2;
-    background-color: lightblue;
-    padding: 10px;
+    padding: 2px;
     margin-bottom: 10px;
     display: flex;
 }
@@ -78,10 +93,24 @@ button {
     height: 60px;
     font-size: 2rem;
     text-align: right;
+    font-weight: bold;
     padding: 10px;
     box-sizing: border-box;
     color: black;
     background-color: white;
     border: 0;
     border-radius: 10px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#backspace {
+    width: 60px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
