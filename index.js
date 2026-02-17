@@ -30,6 +30,8 @@ function clearDisplay() {
 
 historyArray = [];
 
+//TestPushDemonstration
+
 function calculate() {
     expression = display.value;
     try {
