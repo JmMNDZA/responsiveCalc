@@ -53,8 +53,10 @@ function handleKeyPress(event) {
     const key = event.key;
     if ((key >= '0' && key <= '9') || ['+', '-', '*', '/', '.'].includes(key)) {
         incrementDisplay(key);
-    } else if (key === 'x' || key === 'X') {
+    } else if (key.toLowerCase() === 'x') {
         incrementDisplay('*');
+    } else if (key.toLowerCase() === 'h' && display.value !== 'Error' && historyArray.length > 0) {
+    toggleHistoryPanel();
     } else if (key === 'Enter') {
         calculate();
     } else if (key === 'Backspace') {
